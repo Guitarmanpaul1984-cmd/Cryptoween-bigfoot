@@ -1,5 +1,6 @@
 import os
 import random
+import re
 import sqlite3
 import asyncio
 from datetime import time, timezone
@@ -471,8 +472,35 @@ async def send_daily_prophecies(context: ContextTypes.DEFAULT_TYPE):
 async def chat(update, context):
     if not update.message or not update.message.text:
         return
+
+    text = update.message.text.strip()
+
+    # STRICT WAKE WORD MODE:
+    # Bigfoot ignores every normal message in BOTH private chats and groups
+    # unless the message starts with "Bigfoot".
+    #
+    # Works:
+    #   Bigfoot tell me a joke
+    #   Bigfoot, what is Cryptoween?
+    #   BIGFOOT roast me
+    #
+    # Ignored:
+    #   hello
+    #   what can you do?
+    #   hey Bigfoot
+    #
+    # Slash commands such as /help and /loot still work normally because
+    # command messages are handled before this function.
+    match = re.match(r"^\s*bigfoot\b[\s,:!?-]*(.*)$", text, flags=re.IGNORECASE)
+    if not match:
+        return
+
+    request = match.group(1).strip()
+    if not request:
+        request = "Someone called your name. Give a short funny Cryptoween Bigfoot response."
+
     ensure_user(update)
-    await ai_reply(update, update.message.text, 4)
+    await ai_reply(update, request, 4)
 
 def main():
     init_db()
