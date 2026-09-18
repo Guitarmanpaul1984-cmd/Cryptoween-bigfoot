@@ -1,0 +1,24 @@
+start - Enter Cryptoween
+help - Show Bigfoot commands
+cryptoween - Fresh Cryptoween chaos
+bullish - Maximum Cryptoween hype
+brainbuster - Spooky brain buster
+roast - Playful Bigfoot roast
+fortune - Cursed forest fortune
+campfire - Tiny cryptid story
+lore - Bigfoot lore drop
+headline - Fake spooky headline
+daily - Daily Cryptoween prophecy
+sighting - Suspicious Bigfoot sighting
+spookify - Turn text into Cryptoween
+howl - Sasquatch yell
+coinflip - Haunted coin flip
+loot - Search the woods for loot
+battle - Fight a random cryptid
+pumpkinroll - Gamble 2 game pumpkins
+profile - Show level and stats
+inventory - Show collectibles
+leaderboard - Top Cryptoween cryptids
+subscribe - Get daily prophecy
+unsubscribe - Stop daily prophecy
+clear - Clear AI chat history
